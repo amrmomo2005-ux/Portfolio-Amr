@@ -1,0 +1,43 @@
+        /* شريط التمرير المخصص المتناسق مع التصميم الداكن الفاخر */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0d1520;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1d75f2;
+        }
+
+        /* حركات التلاشي المخصصة للدخول الناعم والأنيق للعناصر */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* خلفية الفضاء النيون العميقة المتصلة بـ BG.jpg أو تدرج أزرق بديل رائع */
+        .error-page-bg {
+            background-color: #040f1e;
+            background-image: 
+                linear-gradient(rgba(4, 15, 30, 0.4), rgba(4, 15, 30, 0.65)),
+                url('../assets/assets-erorr-page/BG.png'), 
+                url('../assets/assets-erorr-page/BG.png'); /* كود حماية تلقائي لقراءة ملف الخلفية في أي مجلد */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+        }

@@ -1,0 +1,60 @@
+        /* --- تخصيص شريط التمرير بما يتوافق مع الألوان الدافئة الراقية --- */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050201;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e0531c;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f37c4d;
+        }
+
+        /* --- تأثيرات التحميل والدخول الناعم للعناصر --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- دمج صورة الخلفية bg.jpg كخلفية لكامل الصفحة لتتحرك مع التمرير بشكل طبيعي --- */
+        .branding-page-bg {
+            background-color: #050201; /* لون حماية احتياطي */
+            background-image: 
+                linear-gradient(rgba(5, 2, 1, 0.45), rgba(5, 2, 1, 0.65)), /* فلتر تظليل ناعم لضمان وضوح نصوص الهيدر والسكاشن */
+                url('../assets/assets-branding/bg-2.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll; /* جعل الخلفية تدور وتتحرك بسلاسة مع تمرير الصفحة بالكامل */
+        }
+
+                /* تفعيل خاصية التنعيم والانسيابية لكامل الصفحة برمجياً */
+        html {
+            scroll-behavior: smooth !important;
+        }
+
+        /* استايل مخصص لجعل كود الـ 3D منفتح تماماً بدون أي قطع بالحواف وعلى اليمين براحته */
+        #container3D canvas {
+            width: 100% !important;
+            height: 100% !important;
+            outline: none;
+            display: block;
+            background: transparent !important;
+        }

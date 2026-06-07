@@ -1,0 +1,43 @@
+        /* شريط التمرير المخصص المتناسق مع تدرج الموف الفاخر */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #CEC4F8;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8b76ce;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5f3db5;
+        }
+
+        /* حركات التلاشي المخصصة للدخول الناعم والأنيق للعناصر */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* دمج تدرج النيون الأرجواني الملكي والوردي مع الخلفية المعتمدة CEC4F8 */
+        .neon-purple-bg {
+            background-color: #CEC4F8;
+            background-image: 
+                radial-gradient(circle at top left, rgba(95, 61, 181, 0.75) 0%, transparent 60%),
+                radial-gradient(circle at bottom right, rgba(139, 118, 206, 0.5) 0%, transparent 70%),
+                radial-gradient(circle at center right, rgba(95, 61, 181, 0.4) 0%, transparent 50%);
+        }

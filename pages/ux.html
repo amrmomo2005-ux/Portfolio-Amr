@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMR - UI/UX Portfolio</title>
+    <!-- خط عائلة Inter المميز للتصاميم المعاصرة والمطابق تماماً للصورة الرئيسية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- مكتبة أيقونات Font Awesome للبحث والكرة الأرضية -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        <link rel="stylesheet" href="../css/ux.css">
+    <!-- تضمين Tailwind CSS للتجاوب والتصميم السلس السريع -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-purple': '#5b21b6',
+                        'brand-purple-hover': '#4c1d95',
+                        'bg-dark-overlay': 'rgba(15, 6, 28, 0.45)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+
+    </style>
+</head>
+<body class="ux-page-bg text-white font-sans overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+    <!-- الهيدر الزجاجي الأنيق المتطابق تماماً بالمسارات والترتيب الهيكلي لمشروعك -->
+    <header class="fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-[1200px] z-50 transition-all duration-500">
+        <div class="bg-[#0f061c]/50 backdrop-blur-xl border border-white/10 rounded-[24px] px-8 py-3.5 flex items-center justify-between shadow-2xl">
+            <!-- اللوجو الشفاف الأصلي موجه للمجلد الرئيسي مباشرة -->
+            <div class="flex items-center">
+                <a href="../index.html">
+                    <img src="../assets/assets-main-page/Vector-1.png" alt="AMR Logo" class="h-7 w-auto object-contain hover:scale-105 transition-transform duration-300">
+                </a>
+            </div>
+
+            <!-- روابط التنقل بتصميم نقي وخط Inter الفخم -->
+            <nav class="hidden md:flex items-center gap-10">
+                <!-- Dropdown القائمة المنسدلة لـ Work للكمبيوتر -->
+                <div class="relative group py-2">
+                    <button class="flex items-center text-white hover:text-white/80 text-[15px] font-medium transition-colors duration-300 focus:outline-none">
+                        Work <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <!-- قائمة اللينكات المنسدلة الزجاجية الفاخرة مع تفعيل صفحة الـ UX الحالية كنشطة -->
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 w-48 bg-[#0f061c]/95 backdrop-blur-2xl border border-white/10 rounded-[18px] py-2.5 shadow-2xl opacity-0 invisible scale-95 origin-top transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto">
+                        <a href="logos.html" class="block px-5 py-2 text-[14px] text-white/80 hover:text-white hover:bg-white/5 transition-all duration-200">logos</a>
+                        <a href="branding.html" class="block px-5 py-2 text-[14px] text-white/80 hover:text-white hover:bg-white/5 transition-all duration-200">branding</a>
+                        <a href="3d.html" class="block px-5 py-2 text-[14px] text-white hover:bg-white/5 transition-all duration-200">3d</a>
+                        <a href="ux.html" class="block px-5 py-2 text-[14px] text-white hover:bg-white/5 transition-all duration-200 font-bold">ui/ux</a>
+                    </div>
+                </div>
+                <!-- العودة لسكاشن الصفحة الرئيسية بذكاء ودون تكرار -->
+                <a href="../index.html#about" class="text-white/80 hover:text-white text-[15px] font-medium transition-colors duration-300">About me</a>
+                <a href="../index.html#projects" class="text-white/80 hover:text-white text-[15px] font-medium transition-colors duration-300">Recent Work</a>
+                <a href="../index.html#contact" class="text-white/80 hover:text-white text-[15px] font-medium transition-colors duration-300">Contact me</a>
+            </nav>
+
+            <!-- الأزرار الدائرية على اليمين مع أيقونات البحث والكرة الأرضية كما بالصورة -->
+            <div class="flex items-center gap-3">
+                <button class="w-[38px] h-[38px] bg-white rounded-xl flex items-center justify-center text-black hover:scale-105 hover:bg-gray-100 transition-all duration-300 shadow-md" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                </button>
+                <button class="w-[38px] h-[38px] bg-white rounded-xl flex items-center justify-center text-black hover:scale-105 hover:bg-gray-100 transition-all duration-300 shadow-md" aria-label="Language">
+                    <i class="fa-solid fa-globe text-sm"></i>
+                </button>
+                <!-- زر القائمة للهواتف المحمولة -->
+                <button class="md:hidden text-white text-xl p-2" id="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- القائمة المنسدلة للهواتف المحمولة -->
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-[#0f061c]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 flex flex-col gap-4 text-center shadow-2xl">
+            <!-- Work القابل للفتح والإغلاق على الموبايل -->
+            <div class="flex flex-col">
+                <button id="mobile-work-btn" class="text-white hover:text-brand-purple py-2 transition-colors flex items-center justify-center gap-1.5 focus:outline-none font-medium">
+                    Work <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300" id="mobile-work-arrow"></i>
+                </button>
+                <div id="mobile-work-submenu" class="hidden flex-col gap-2 bg-black/30 rounded-xl py-2 mt-1">
+                    <a href="logos.html" class="text-white/70 hover:text-white py-1.5 text-sm transition-colors">logos</a>
+                    <a href="branding.html" class="text-white/70 hover:text-white py-1.5 text-sm transition-colors">branding</a>
+                    <a href="3d.html" class="text-white/70 hover:text-white py-1.5 text-sm transition-colors">3d</a>
+                    <a href="ux.html" class="text-white py-1.5 text-sm transition-colors font-bold">ui/ux</a>
+                </div>
+            </div>
+            <a href="../index.html#about" class="text-white hover:text-brand-purple py-2 transition-colors">About me</a>
+            <a href="../index.html#projects" class="text-white hover:text-brand-purple py-2 transition-colors">Recent Work</a>
+            <a href="../index.html#contact" class="text-white hover:text-brand-purple py-2 transition-colors">Contact me</a>
+        </div>
+    </header>
+
+    <!-- حاوية الـ Hero الرئيسية لصفحة الـ UI/UX المتجاوبة والمطابقة بكسلياً لـ hero-1.jpg -->
+    <section class="w-full max-w-[1300px] mx-auto px-6 md:px-12 pt-36 md:pt-20 min-h-screen flex items-center relative z-10" id="work">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full relative">
+            
+            <!-- الجزء النصي الأيسر (5 أعمدة) -->
+            <div class="lg:col-span-5 flex flex-col justify-center text-left animate-fade-in-up">
+                <!-- العنوان الصغير العلوي -->
+                <span class="text-white/80 text-[17px] font-light mb-4 block tracking-wide">I'm a UI/UX Designer</span>
+                
+                <!-- العنوان الرئيسي الضخم والموزع على سطرين تماماً كالتصميم -->
+                <h1 class="text-[52px] sm:text-[68px] lg:text-[74px] font-extrabold text-white leading-[1.08] tracking-tight mb-6">
+                    What do you<br>Require?
+                </h1>
+                
+                <!-- الوصف التفصيلي الدقيق المتطابق نصاً وتباعداً من ريفرنس hero-1.jpg -->
+                <p class="text-white/95 text-[15px] sm:text-[16px] leading-[1.65] mb-10 max-w-[460px]">
+                    "Designing intuitive, user-centered digital products and interactive web experiences. Here is how I transform complex user problems into seamless, wireframed, and visually stunning interfaces."
+                </p>
+                
+                <!-- الأزرار المحدثة مع تأثير هوفر وحركي راقٍ -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <a href="../index.html#projects" class="bg-white text-black font-bold text-sm px-9 py-4 rounded-[12px] text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,255,255,0.15)]">
+                        View Projects
+                    </a>
+                    <a href="../index.html#contact" class="bg-[#1d75f2] text-white font-bold text-sm px-9 py-4 rounded-[12px] text-center transition-all duration-300 hover:bg-[#155ec4] hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(29,117,242,0.3)]">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+
+            <!-- الجزء البصري الأيمن (7 أعمدة) يعرض مجسم مصمم الـ UX المذهل كـ Layer تفاعلي بالمسار الحقيقي -->
+            <div class="lg:col-span-7 flex justify-center lg:justify-end items-center relative w-full mt-8 lg:mt-0">
+                <!-- حاوية الأرت وورك الحركية لتجربة بصرية فريدة -->
+                <div class="relative w-full max-w-[620px] flex items-center justify-center cursor-pointer overflow-visible z-10" id="interactive-hero-box">
+                    <img 
+                        src="../assets/assets-ui-ux-page/animation-original 1.png" 
+                        alt="AMR Premium UI/UX 3D Scene" 
+                        id="hero-ux-img"
+                        class="w-[90%] md:w-full h-auto object-contain drop-shadow-[0_20px_60px_rgba(91,33,182,0.25)] transition-transform duration-200 ease-out pointer-events-none rounded-[28px]"
+                    >
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- سكن APPLICATION الجديد بالكامل والمتطابق 100% مع الريفرنس app-1.jpg وموضوع بدقة قبل الفوتر -->
+    <section class="relative w-full py-28 px-6 md:px-12 overflow-hidden flex items-center justify-center" id="application">
+        <!-- طبقة خلفية مخصصة للسكشن في حال أحببت تخصيصها محلياً -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 pointer-events-none z-0" style="background-image: url('../assets/assets-ui-ux-page/app-bg.jpg');"></div>
+        
+        <!-- هالة توهج بنفسجية دائرية خافتة لمطابقة أجواء ريفرنس app-1.jpg -->
+        <div class="absolute left-[-100px] top-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-brand-purple/20 filter blur-[120px] rounded-full pointer-events-none z-0"></div>
+
+        <div class="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+            <!-- العمود الأيسر: النصوص والوصف العريض (4 أعمدة) -->
+            <div class="lg:col-span-4 flex flex-col justify-center text-left">
+                <!-- عنوان السكشن الرئيسي الضخم والناصع -->
+                <h2 class="text-[44px] sm:text-[54px] md:text-[62px] font-extrabold text-white leading-none tracking-tight mb-8 uppercase">
+                    APPLICATION
+                </h2>
+                <!-- النص التعريفي المحدث والأكثر احترافية وتفصيلاً طبقاً لطلبك -->
+                <p class="text-white/80 text-[14.5px] sm:text-[15.5px] leading-[1.65] max-w-[360px] font-normal">
+                    Creative Lab is a sophisticated application that helps users master Adobe software. The focus is on creating elegant, responsive, and highly accurate interfaces, with an emphasis on ease of use. Discover my strategic approach, from designing user journeys to delivering stunning visual designs.
+                </p>
+            </div>
+
+            <!-- العمود الأيمن: واجهات الموبايل وموك آب التطبيق (8 أعمدة) المصغر بدقة تامة -->
+            <div class="lg:col-span-8 flex flex-col gap-8 w-full justify-center">
+                
+                <!-- الصف الأول من شاشات الموبايل (app-1.png) - مع ضبط الحد الأقصى للعرض والتمركز -->
+                <div class="w-full max-w-[520px] mx-auto relative overflow-hidden rounded-[24px] transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[0_20px_50px_rgba(91,33,182,0.15)] cursor-pointer group">
+                    <img 
+                        src="../assets/assets-ui-ux-page/app-1.png" 
+                        alt="Creative Lab Mobile App Mockups Row 1" 
+                        class="w-full h-auto object-contain transition-transform duration-700 ease-out group-hover:scale-105"
+                    >
+                </div>
+
+                <!-- الصف الثاني من شاشات الموبايل (app-2.png) - مع ضبط الحد الأقصى للعرض والتمركز -->
+                <div class="w-full max-w-[520px] mx-auto relative overflow-hidden rounded-[24px] transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[0_20px_50px_rgba(91,33,182,0.15)] cursor-pointer group">
+                    <img 
+                        src="../assets/assets-ui-ux-page/app-2.png" 
+                        alt="Creative Lab Course Interface Mockups Row 2" 
+                        class="w-full h-auto object-contain transition-transform duration-700 ease-out group-hover:scale-105"
+                    >
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- سكشن WEBSITE الجديد بالكامل والمتطابق 100% مع الريفرنس WEB-2.jpg وموضوع بدقة قبل الفوتر مباشرة -->
+    <section class="relative w-full py-28 px-6 md:px-12 overflow-hidden flex items-center justify-center" id="website">
+        <!-- هالة توهج زرقاء خافتة ممتدة من اليمين لتطابق أجواء ريفرنس WEB-2.jpg -->
+        <div class="absolute right-[-100px] top-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-blue-600/10 filter blur-[120px] rounded-full pointer-events-none z-0"></div>
+
+        <div class="max-w-[1200px] w-full flex flex-col gap-16 relative z-10">
+            <!-- الجزء العلوي: النصوص والوصف العريض المحدث بدقة وبناءً على صياغتك الهامة للغاية -->
+            <div class="flex flex-col text-left">
+                <!-- عنوان السكشن الرئيسي الضخم والناصع -->
+                <h2 class="text-[44px] sm:text-[54px] md:text-[62px] font-extrabold text-white leading-none tracking-tight mb-8 uppercase">
+                    WEBSITE
+                </h2>
+                <!-- النص التعريفي المحدث لسكشن الويب ليكون متطابقاً مع طلبك بالمليمتر -->
+                <p class="text-white/80 text-[14.5px] sm:text-[15.5px] leading-[1.65] max-w-[620px] font-light">
+                    Historic Art is a premium, editorial web experience designed for art museums and cultural institutions. The layout focuses on bold editorial typography, immersive storytelling, and a deep monochromatic color palette that honors historical masterpieces
+                </p>
+            </div>
+
+            <!-- الجزء السفلي: الكروت الثلاثة الأفقية المنحنية الأطراف (3-Column Layout Grid) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full mt-6">
+                <!-- الكارت 1: هيرو الويب -->
+                <div class="relative overflow-hidden rounded-[24px] border border-white/5 aspect-[16/10] bg-[#0f061c]/40 backdrop-blur-md shadow-2xl transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.02] hover:shadow-[0_20px_45px_rgba(29,117,242,0.25)] hover:border-white/10 cursor-pointer group">
+                    <img 
+                        src="../assets/assets-ui-ux-page/hero-sec-web.png" 
+                        alt="Historic Art Website Hero Section" 
+                        class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    >
+                </div>
+                <!-- الكارت 2: محتوى الويب -->
+                <div class="relative overflow-hidden rounded-[24px] border border-white/5 aspect-[16/10] bg-[#0f061c]/40 backdrop-blur-md shadow-2xl transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.02] hover:shadow-[0_20px_45px_rgba(29,117,242,0.25)] hover:border-white/10 cursor-pointer group">
+                    <img 
+                        src="../assets/assets-ui-ux-page/content-sce-web.png" 
+                        alt="Historic Art Website Content Card" 
+                        class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    >
+                </div>
+                <!-- الكارت 3: فوتر الويب -->
+                <div class="relative overflow-hidden rounded-[24px] border border-white/5 aspect-[16/10] bg-[#0f061c]/40 backdrop-blur-md shadow-2xl transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.02] hover:shadow-[0_20px_45px_rgba(29,117,242,0.25)] hover:border-white/10 cursor-pointer group">
+                    <img 
+                        src="../assets/assets-ui-ux-page/footer-sec-web.png" 
+                        alt="Historic Art Website Footer Section" 
+                        class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر الأخير الاحترافي المتطابق بنسبة 100% مع صورة الريفرنس footer-2_2.jpg وبنظام التوهج الخلفي المذهل -->
+    <footer class="w-full pt-16 pb-12 text-center relative overflow-hidden z-10 flex flex-col items-center justify-center bg-gradient-to-t from-[#0f061c]/90 via-[#0f061c]/45 to-transparent">
+        
+        <div class="max-w-[1200px] w-full flex flex-col items-center justify-center px-6 relative z-10">
+            <!-- اللوجو المتمركز الضخم والمطابق تماماً في الفوتر -->
+            <div class="mb-5 flex justify-center">
+                <img src="../assets/assets-main-page/Vector-1.png" alt="AMR Huge Footer Logo" class="h-28 md:h-36 w-auto object-contain select-none pointer-events-none drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+            </div>
+
+            <!-- جملة a graphic designer الفخمة والمتباعدة بشكل أسطوري -->
+            <p class="text-white/90 font-light text-[15px] sm:text-[17px] tracking-[0.35em] md:tracking-[0.55em] mb-12 lowercase select-none">
+                a graphic designer
+            </p>
+
+            <!-- صف أزرار السوشيال ميديا الحقيقية الموجهة لملفاتك الرئيسية -->
+            <div class="flex items-center justify-center gap-6 md:gap-7 mb-14">
+                <!-- زر X -->
+                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-transparent border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-300 hover:scale-110" aria-label="X (formerly Twitter)">
+                    <img src="../assets/assets-main-page/X Logo.png" alt="X" class="w-5 h-5 object-contain">
+                </a>
+                <!-- زر Instagram -->
+                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-transparent border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-300 hover:scale-110" aria-label="Instagram">
+                    <img src="../assets/assets-main-page/Logo Instagram.png" alt="Instagram" class="w-5 h-5 object-contain">
+                </a>
+                <!-- زر YouTube -->
+                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-transparent border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-300 hover:scale-110" aria-label="YouTube">
+                    <img src="../assets/assets-main-page/Logo YouTube.png" alt="YouTube" class="w-5.5 h-5.5 object-contain">
+                </a>
+                <!-- زر LinkedIn -->
+                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-transparent border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-300 hover:scale-110" aria-label="LinkedIn">
+                    <img src="../assets/assets-main-page/LinkedIn.png" alt="LinkedIn" class="w-5 h-5 object-contain">
+                </a>
+            </div>
+
+            <!-- جملة الحقوق والمكلية الحصرية المطابقة مائة بالمائة -->
+            <p class="text-white/90 text-xs tracking-wider select-none font-medium">
+                © 2026 AMR. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- كود الجافا سكريبت لتشغيل تأثير الـ Parallax التفاعلي للأرت وورك وقائمة الهاتف -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // تفعيل قائمة الهاتف
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileBtn.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.className = 'fa-solid fa-bars';
+                } else {
+                    icon.className = 'fa-solid fa-xmark';
+                }
+            });
+
+            // تفعيل القائمة الفرعية لـ Work على الموبايل
+            const mobileWorkBtn = document.getElementById('mobile-work-btn');
+            const mobileWorkSubmenu = document.getElementById('mobile-work-submenu');
+            const mobileWorkArrow = document.getElementById('mobile-work-arrow');
+
+            if (mobileWorkBtn && mobileWorkSubmenu) {
+                mobileWorkBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    mobileWorkSubmenu.classList.toggle('hidden');
+                    mobileWorkSubmenu.classList.toggle('flex');
+                    mobileWorkArrow.classList.toggle('rotate-180');
+                });
+            }
+
+            // إغلاق القائمة عند النقر على أي رابط غير معني بفتح القائمة الفرعية
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileBtn.querySelector('i').className = 'fa-solid fa-bars';
+                });
+            });
+
+            // تأثير حركي تفاعلي خفيف وفخم جداً مع الماوس للصورة (3D Parallax Tilt)
+            const heroBox = document.getElementById('interactive-hero-box');
+            const heroImg = document.getElementById('hero-ux-img');
+
+            if (heroBox && heroImg) {
+                heroBox.addEventListener('mousemove', (e) => {
+                    const rect = heroBox.getBoundingClientRect();
+                    
+                    // حساب موضع مؤشر الماوس بالنسبة لمنتصف الصورة
+                    const x = e.clientX - rect.left - (rect.width / 2);
+                    const y = e.clientY - rect.top - (rect.height / 2);
+
+                    // تحويل الموضع لزاوية ميلان واقعية وناعمة للغاية
+                    const rotateX = -(y / (rect.height / 2)) * 8; // ميلان رأسي بحد أقصى 8 درجات
+                    const rotateY = (x / (rect.width / 2)) * 10;  // ميلان أفقي بحد أقصى 10 درجات
+
+                    // تطبيق التحويل مع إزاحة خفيفة لليمين واليسار
+                    heroImg.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+                });
+
+                // إعادة الصورة لوضعها المستقر والناعم عند خروج الماوس
+                heroBox.addEventListener('mouseleave', () => {
+                    heroImg.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+                    heroImg.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                });
+
+                heroBox.addEventListener('mouseenter', () => {
+                    heroImg.style.transition = 'transform 0.1s ease-out';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

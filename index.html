@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMR - Graphic Designer</title>
+    <!-- خط عائلة Inter المتميز للتصاميم المعاصرة والمطابق تماماً للصورة -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- مكتبة أيقونات Font Awesome للبحث والكرة الأرضية -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- تضمين Tailwind CSS للتصميم المتجاوب السريع والسلس -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#1d75f2',
+                        'brand-blue-hover': '#155ec4',
+                        'bg-black': '#000000',
+                        'nav-dark': '#08121e',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+
+    </style>
+</head>
+<body class="bg-black text-white font-sans overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+    <!-- الهيدر الزجاجي الأنيق والمطابق بالمليمتر لصورة الريفرنس الأصلي -->
+    <header class="fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-[1200px] z-50 transition-all duration-500">
+        <div class="bg-[#08121e]/50 backdrop-blur-xl border border-white/10 rounded-[24px] px-8 py-3.5 flex items-center justify-between shadow-2xl">
+            <div class="flex items-center">
+                <a href="index.html">
+                    <img src="assets/assets-main-page/Vector-1.png" alt="AMR Logo" class="h-7 w-auto object-contain hover:scale-105 transition-transform duration-300" onerror="this.src='Vector-1.png'">
+                </a>
+            </div>
+
+            <!-- روابط التنقل الموزعة بمسافات أنيقة ومطابقة للصورة -->
+            <nav class="hidden md:flex items-center gap-10">
+                <div class="relative group py-2">
+                    <button class="flex items-center text-white hover:text-white/80 text-[15px] font-medium transition-colors duration-300 focus:outline-none">
+                        Work <i class="fa-solid fa-chevron-down text-[10px] ml-1.5 transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full mt-1.5 w-48 bg-[#08121e]/95 backdrop-blur-2xl border border-white/10 rounded-[18px] py-2.5 shadow-2xl opacity-0 invisible scale-95 origin-top transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto">
+                        <a href="pages/logos.html" class="block px-5 py-2 text-[14px] text-white/80 hover:text-white hover:bg-white/5 transition-all duration-200">logos</a>
+                        <a href="pages/branding.html" class="block px-5 py-2 text-[14px] text-white/80 hover:text-white hover:bg-white/5 transition-all duration-200">branding</a>
+                        <a href="pages/3d.html" class="block px-5 py-2 text-[14px] text-white/80 hover:text-white hover:bg-white/5 transition-all duration-200">3d</a>
+                        <a href="pages/ux.html" class="block px-5 py-2 text-[14px] text-white/80 hover:text-white hover:bg-white/5 transition-all duration-200">ui/ux</a>
+                    </div>
+                </div>
+                <a href="#about" class="scroll-link text-white/80 hover:text-white text-[15px] font-medium transition-colors duration-300">About-Us</a>
+                <a href="#projects" class="scroll-link text-white/80 hover:text-white text-[15px] font-medium transition-colors duration-300">Services</a>
+                <a href="#contact" class="scroll-link text-white/80 hover:text-white text-[15px] font-medium transition-colors duration-300">Contact-Us</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button class="w-[38px] h-[38px] bg-white rounded-xl flex items-center justify-center text-black hover:scale-105 hover:bg-gray-100 transition-all duration-300 shadow-md" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                </button>
+                <button class="w-[38px] h-[38px] bg-white rounded-xl flex items-center justify-center text-black hover:scale-105 hover:bg-gray-100 transition-all duration-300 shadow-md" aria-label="Language">
+                    <i class="fa-solid fa-globe text-sm"></i>
+                </button>
+                <button class="md:hidden text-white text-xl p-2" id="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- القائمة المنسدلة للهواتف المحمولة -->
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-[#08121e]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 flex flex-col gap-4 text-center shadow-2xl">
+            <div class="flex flex-col">
+                <button id="mobile-work-btn" class="text-white hover:text-brand-blue py-2 transition-colors flex items-center justify-center gap-1.5 focus:outline-none font-medium">
+                    Work <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300" id="mobile-work-arrow"></i>
+                </button>
+                <div id="mobile-work-submenu" class="hidden flex-col gap-2 bg-black/30 rounded-xl py-2 mt-1">
+                    <a href="pages/logos.html" class="text-white/70 hover:text-white py-1.5 text-sm transition-colors">logos</a>
+                    <a href="pages/branding.html" class="text-white/70 hover:text-white py-1.5 text-sm transition-colors">branding</a>
+                    <a href="pages/3d.html" class="text-white/70 hover:text-white py-1.5 text-sm transition-colors">3d</a>
+                    <a href="pages/ux.html" class="text-white/70 hover:text-white py-1.5 text-sm transition-colors">ui/ux</a>
+                </div>
+            </div>
+            <a href="#about" class="scroll-link text-white hover:text-brand-blue py-2 transition-colors">About-Us</a>
+            <a href="#projects" class="scroll-link text-white hover:text-brand-blue py-2 transition-colors">Services</a>
+            <a href="#contact" class="scroll-link text-white hover:text-brand-blue py-2 transition-colors">Contact-Us</a>
+        </div>
+    </header>
+
+    <!-- حاوية الـ Hero الرئيسية للموقع: تم فتح مساحة الـ 3D بالكامل على اليمين بدون قطع حواف -->
+    <section class="w-full max-w-[1300px] mx-auto px-6 md:px-12 pt-32 md:pt-20 min-h-screen flex items-center relative overflow-hidden" id="hero">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 pointer-events-none z-0" style="background-image: url('assets/assets-main-page/bgs/hero.png');"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full relative z-10">
+            
+            <!-- الجزء النصي الأيسر (5 أعمدة) -->
+            <div class="lg:col-span-5 flex flex-col justify-center text-left animate-fade-in-up">
+                <span class="text-white/80 text-[17px] font-light mb-4 block tracking-wide">I'm a graphic designer</span>
+                <h1 class="text-[52px] sm:text-[68px] lg:text-[74px] font-extrabold text-white leading-[1.08] tracking-tight mb-6">
+                    What do you<br>Require?
+                </h1>
+                <p class="text-white/90 text-[15px] sm:text-[16px] leading-[1.65] mb-10 max-w-[460px]">
+                    Amr mohamed create brand system, web design, logo, campaign and motion intro logos
+                </p>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <a href="#projects" class="scroll-link bg-white text-black font-bold text-sm px-9 py-4 rounded-[12px] text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,255,255,0.15)]">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="scroll-link bg-brand-blue text-white font-bold text-sm px-9 py-4 rounded-[12px] text-center transition-all duration-300 hover:bg-brand-blue-hover hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(29,117,242,0.3)]">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+
+            <!-- الجزء البصري الأيمن (7 أعمدة): منفتح تماماً بـ overflow-visible ومحاذاة واسعة ومريحة جداً للشعار -->
+            <div class="lg:col-span-7 flex justify-center lg:justify-end items-center relative w-full mt-8 lg:mt-0 h-[500px] md:h-[620px] overflow-visible">
+                <div id="container3D" class="w-full h-full relative z-20 overflow-visible bg-transparent"></div>
+                <div class="absolute w-[400px] h-[400px] rounded-full bg-blue-600/10 filter blur-[100px] pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- سكشن ABOUT ME المتناسق مع أنميشن الـ SKILLS التفاعلي الجديد بالكامل -->
+    <section class="relative w-full py-28 px-6 md:px-12 overflow-hidden flex items-center justify-center" id="about">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 pointer-events-none z-0" style="background-image: url('assets/assets-main-page/bgs/about-bg.png');"></div>
+        <div class="absolute left-[-100px] top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-blue-600/10 filter blur-[100px] rounded-full pointer-events-none z-0"></div>
+
+        <div class="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-stretch relative z-10">
+            <!-- العمود الأيسر: الصورة الشخصية والـ Skills المضافة بحركات تفاعلية خلابة -->
+            <div class="lg:col-span-5 flex flex-col gap-6 justify-between">
+                <h2 class="text-white font-extrabold text-[32px] md:text-[38px] tracking-tight mb-2 select-none uppercase">
+                    ABOUT ME
+                </h2>
+
+                <div class="relative overflow-hidden rounded-[24px] aspect-square w-full bg-gradient-to-b from-blue-900/10 to-blue-950/20 border border-white/5 flex items-center justify-center shadow-xl">
+                    <img src="assets/assets-main-page/my-photo.png" alt="Amr Mohamed Profile" class="w-full h-full object-cover rounded-[24px]" onerror="this.src='my-photo.png'">
+                </div>
+
+                <!-- كارت المهارات المحدث بأنميشن عائم وتوهج نيون عند الهوفر لكل برنامج بالمليمتر -->
+                <div class="bg-gradient-to-br from-blue-950/20 to-black/40 border border-white/5 rounded-[24px] p-6 shadow-xl flex flex-col justify-center">
+                    <h3 class="text-white font-bold text-sm tracking-widest uppercase mb-6 select-none pl-1">
+                        SKILLS
+                    </h3>
+                    <div class="flex items-center justify-between gap-2.5 px-2">
+                        <!-- InDesign -->
+                        <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-transparent transition-all duration-300 hover:scale-120 hover:shadow-[0_0_15px_rgba(255,0,128,0.3)] skill-icon-float anim-delay-1 cursor-pointer">
+                            <img src="assets/assets-main-page/Indesign.png" alt="InDesign" class="w-9 h-9 object-contain" onerror="this.src='Indesign.png'">
+                        </div>
+                        <!-- After Effects -->
+                        <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-transparent transition-all duration-300 hover:scale-120 hover:shadow-[0_0_15px_rgba(156,39,176,0.4)] skill-icon-float anim-delay-2 cursor-pointer">
+                            <img src="assets/assets-main-page/After effects.png" alt="After Effects" class="w-9 h-9 object-contain" onerror="this.src='After effects.png'">
+                        </div>
+                        <!-- Premiere Pro: البطل الرئيسي المتوهج بشكل دائم وخلاب في السنتر -->
+                        <div class="w-16 h-16 flex items-center justify-center rounded-2xl bg-blue-600/10 border border-blue-500/20 shadow-[0_0_22px_rgba(29,117,242,0.3)] transition-all duration-300 hover:scale-115 hover:shadow-[0_0_30px_rgba(29,117,242,0.55)] skill-icon-float cursor-pointer">
+                            <img src="assets/assets-main-page/Premiere pro.png" alt="Premiere Pro" class="w-12 h-12 object-contain" onerror="this.src='Premiere pro.png'">
+                        </div>
+                        <!-- Illustrator -->
+                        <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-transparent transition-all duration-300 hover:scale-120 hover:shadow-[0_0_15px_rgba(255,152,0,0.4)] skill-icon-float anim-delay-3 cursor-pointer">
+                            <img src="assets/assets-main-page/Illustrator.png" alt="Illustrator" class="w-9 h-9 object-contain" onerror="this.src='Illustrator.png'">
+                        </div>
+                        <!-- Photoshop -->
+                        <div class="w-11 h-11 flex items-center justify-center rounded-xl bg-transparent transition-all duration-300 hover:scale-120 hover:shadow-[0_0_15px_rgba(3,169,244,0.4)] skill-icon-float anim-delay-4 cursor-pointer">
+                            <img src="assets/assets-main-page/Photoshop.png" alt="Photoshop" class="w-9 h-9 object-contain" onerror="this.src='Photoshop.png'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- العمود الأيمن: كارت البيانات الشخصية المصلح والمتمركز تماماً دون تباعد حواف -->
+            <div class="lg:col-span-7 bg-gradient-to-br from-blue-950/20 to-black/30 border border-white/5 rounded-[24px] p-8 md:p-12 flex flex-col justify-center items-center text-center gap-12 shadow-xl">
+                <div class="flex flex-col items-center select-none">
+                    <span class="text-white font-extrabold text-[22px] md:text-[24px] tracking-wide">
+                        Name <span class="text-white/40 mx-2">:</span> <span class="text-white/80 font-normal text-[18px] md:text-[20px] tracking-normal">Amr Mohamed</span>
+                    </span>
+                </div>
+                <div class="flex flex-col items-center select-none">
+                    <span class="text-white font-extrabold text-[22px] md:text-[24px] tracking-wide">
+                        Job Title <span class="text-white/40 mx-2">:</span> <span class="text-white/80 font-normal text-[18px] md:text-[20px] tracking-normal">Graphic designer</span>
+                    </span>
+                </div>
+                <div class="flex flex-col items-center select-none">
+                    <span class="text-white font-extrabold text-[22px] md:text-[24px] tracking-wide">
+                        Address <span class="text-white/40 mx-2">:</span> <span class="text-white/80 font-normal text-[18px] md:text-[20px] tracking-normal">Nasr City, Cairo</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- سكشن MY RECENT WORKS القديم والكامل للمشاريع الأربعة -->
+    <section class="relative w-full py-28 px-6 md:px-12 overflow-hidden flex items-center justify-center" id="projects">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 pointer-events-none z-0" style="background-image: url('assets/assets-main-page/bgs/work-bg.png');"></div>
+        <div class="absolute right-[-100px] top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-blue-600/10 filter blur-[100px] rounded-full pointer-events-none z-0"></div>
+
+        <div class="max-w-[1200px] w-full flex flex-col items-center gap-16 relative z-10">
+            <h2 class="text-center text-[44px] sm:text-[54px] md:text-[62px] font-extrabold tracking-tight text-white uppercase">
+                MY RECENT WORKS
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 w-full">
+                <!-- 1 -->
+                <div class="group flex flex-col gap-5">
+                    <div class="relative overflow-hidden rounded-[24px] border border-white/5 aspect-[16/10] bg-white/5 shadow-xl transition-all duration-500 ease-out group-hover:scale-[1.02] group-hover:shadow-[0_15px_35px_rgba(29,117,242,0.25)] group-hover:border-white/10 cursor-pointer">
+                        <img src="assets/assets-main-page/bs-card.png" alt="Mmcpr Project" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='bs-card.png'">
+                    </div>
+                    <div class="text-[15px] tracking-wide text-white/90 pl-1 transition-colors duration-300 group-hover:text-white font-light">
+                        <span class="font-extrabold">Mmcpr Project</span> <span class="text-white/50 mx-1">:</span> <span class="font-normal text-white/75">Business Card Design</span>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="group flex flex-col gap-5">
+                    <div class="relative overflow-hidden rounded-[24px] border border-white/5 aspect-[16/10] bg-white/5 shadow-xl transition-all duration-500 ease-out group-hover:scale-[1.02] group-hover:shadow-[0_15px_35px_rgba(29,117,242,0.25)] group-hover:border-white/10 cursor-pointer">
+                        <img src="assets/assets-main-page/robot-f.png" alt="3d Project" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='robot-f.png'">
+                    </div>
+                    <div class="text-[15px] tracking-wide text-white/90 pl-1 transition-colors duration-300 group-hover:text-white font-light">
+                        <span class="font-extrabold">3d Project</span> <span class="text-white/50 mx-1">:</span> <span class="font-normal text-white/75">Robot Modeling</span>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="group flex flex-col gap-5">
+                    <div class="relative overflow-hidden rounded-[24px] border border-white/5 aspect-[16/10] bg-white/5 shadow-xl transition-all duration-500 ease-out group-hover:scale-[1.02] group-hover:shadow-[0_15px_35px_rgba(29,117,242,0.25)] group-hover:border-white/10 cursor-pointer">
+                        <img src="assets/assets-main-page/catalog.png" alt="Mmcpr Project" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='catalog.png'">
+                    </div>
+                    <div class="text-[15px] tracking-wide text-white/90 pl-1 transition-colors duration-300 group-hover:text-white font-light">
+                        <span class="font-extrabold">Mmcpr Project</span> <span class="text-white/50 mx-1">:</span> <span class="font-normal text-white/75">Catalog Design</span>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="group flex flex-col gap-5">
+                    <div class="relative overflow-hidden rounded-[24px] border border-white/5 aspect-[16/10] bg-white/5 shadow-xl transition-all duration-500 ease-out group-hover:scale-[1.02] group-hover:shadow-[0_15px_35px_rgba(29,117,242,0.25)] group-hover:border-white/10 cursor-pointer">
+                        <img src="assets/assets-main-page/dl-hawada.png" alt="Hawada Project" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='dl-hawada.png'">
+                    </div>
+                    <div class="text-[15px] tracking-wide text-white/90 pl-1 transition-colors duration-300 group-hover:text-white font-light">
+                        <span class="font-extrabold">Hawada Project</span> <span class="text-white/50 mx-1">:</span> <span class="font-normal text-white/75">DL Envlope</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- سكشن التواصل مع أبعاد الحقول السميكة المظبوطة بالبكسل وفلاتر الأيقونات -->
+    <section class="relative w-full py-28 px-6 md:px-12 overflow-hidden flex items-center justify-center" id="contact">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 pointer-events-none z-0" style="background-image: url('assets/assets-main-page/bgs/contsct-bg.png');"></div>
+        <div class="absolute right-[-100px] top-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-blue-600/10 filter blur-[120px] rounded-full pointer-events-none z-0"></div>
+
+        <div class="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+            <div class="lg:col-span-5 flex flex-col justify-center text-left">
+                <span class="text-white/60 text-[16px] font-light mb-3 block tracking-wide">i'm here to help you</span>
+                <h2 class="text-[44px] sm:text-[54px] md:text-[62px] font-extrabold text-white leading-none tracking-tight mb-6">
+                    Let us<br>Collaborate
+                </h2>
+                <p class="text-white/80 text-[14.5px] sm:text-[15.5px] leading-[1.65] mb-10 max-w-[360px] font-normal">
+                    if you want top-quality for your business
+                </p>
+
+                <div class="flex flex-col gap-5">
+                    <a href="https://www.behance.net/amrmuhammed6" target="_blank" class="flex items-center gap-4 group cursor-pointer w-fit">
+                        <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                            <img src="assets/assets-main-page/wpf_behance.png" alt="Behance" class="w-6 h-6 object-contain brightness-0 filter" onerror="this.src='wpf_behance.png'">
+                        </div>
+                        <span class="text-white/85 text-[14px] md:text-[15px] font-normal tracking-wide transition-colors duration-300 group-hover:text-white select-all">
+                            behance.net/amrmuhammed6
+                        </span>
+                    </a>
+                    <a href="tel:+201021456684" class="flex items-center gap-4 group cursor-pointer w-fit">
+                        <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                            <img src="assets/assets-main-page/Group 8.png" alt="Phone" class="w-5 h-5 object-contain brightness-0 filter" onerror="this.src='Group 8.png'">
+                        </div>
+                        <span class="text-white/85 text-[14px] md:text-[15px] font-normal tracking-wide transition-colors duration-300 group-hover:text-white select-all">
+                            +201021456684
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 bg-gradient-to-br from-blue-950/20 to-black/35 border border-white/10 rounded-[28px] p-8 md:p-12 shadow-2xl relative z-10 flex flex-col gap-6">
+                <div class="flex flex-col gap-2">
+                    <input type="text" id="contact-name" placeholder="Name" class="w-full bg-[#c9e1fd] text-black font-semibold text-sm px-6 py-4 rounded-[18px] outline-none placeholder-black/55 focus:bg-white">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <input type="email" id="contact-email" placeholder="Email" class="w-full bg-[#c9e1fd] text-black font-semibold text-sm px-6 py-4 rounded-[18px] outline-none placeholder-black/55 focus:bg-white">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <textarea id="contact-request" rows="4" placeholder="Your Request" class="w-full bg-[#c9e1fd] text-black font-semibold text-sm px-6 py-4 rounded-[18px] outline-none placeholder-black/55 focus:bg-white resize-none"></textarea>
+                </div>
+                <button id="submit-contact-btn" class="w-full bg-brand-blue text-white font-bold text-sm py-4 rounded-[18px] transition-all duration-300 hover:bg-brand-blue-hover hover:scale-[1.01]">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر الأصلي المشرق المتوهج بالكامل -->
+    <footer class="w-full pt-16 pb-12 text-center relative overflow-hidden z-10 flex flex-col items-center justify-center footer-glow-bg">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 pointer-events-none z-0" style="background-image: url('assets/assets-main-page/bgs/footer-bg.png');"></div>
+        
+        <div class="max-w-[1200px] w-full flex flex-col items-center justify-center px-6 relative z-10">
+            <div class="mb-5 flex justify-center">
+                <img src="assets/assets-main-page/Vector-1.png" alt="AMR Huge Footer Logo" class="h-28 md:h-36 w-auto object-contain select-none pointer-events-none drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]" onerror="this.src='Vector-1_2.png'">
+            </div>
+
+            <p class="text-white/90 font-light text-[15px] sm:text-[17px] tracking-[0.35em] md:tracking-[0.55em] mb-12 lowercase select-none">
+                a graphic designer
+            </p>
+
+            <div class="flex items-center justify-center gap-6 md:gap-7 mb-14">
+                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-transparent border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-300 hover:scale-110" aria-label="X">
+                    <img src="assets/assets-main-page/X Logo.png" alt="X" class="w-5 h-5 object-contain" onerror="this.src='X Logo.png'">
+                </a>
+                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-transparent border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-300 hover:scale-110" aria-label="Instagram">
+                    <img src="assets/assets-main-page/Logo Instagram.png" alt="Instagram" class="w-5 h-5 object-contain" onerror="this.src='Logo Instagram.png'">
+                </a>
+                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-transparent border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-300 hover:scale-110" aria-label="YouTube">
+                    <img src="assets/assets-main-page/Logo YouTube.png" alt="YouTube" class="w-5.5 h-5.5 object-contain" onerror="this.src='Logo YouTube.png'">
+                </a>
+                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-transparent border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-300 hover:scale-110" aria-label="LinkedIn">
+                    <img src="assets/assets-main-page/LinkedIn.png" alt="LinkedIn" class="w-5 h-5 object-contain" onerror="this.src='LinkedIn.png'">
+                </a>
+            </div>
+
+            <p class="text-white/60 text-xs tracking-wider select-none font-medium">
+                © 2026 AMR. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- توست منبثق تفاعلي عند ملء الفورم بنجاح -->
+    <div id="toast-success" class="fixed bottom-8 right-8 z-[2000] bg-brand-blue/95 border border-white/25 backdrop-blur-xl px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-24 opacity-0 pointer-events-none transition-all duration-500">
+        <i class="fa-solid fa-circle-check text-white text-xl"></i>
+        <span class="text-white text-sm font-semibold tracking-wide">Success! Your Request Has Been Sent Comfortably.</span>
+    </div>
+
+    <!-- كود تشغيل محرك Three.js + تفعيل كود الـ Smooth Navigation المطور للروابط الداخليّة -->
+    <script type="module">
+        import * as THREE from 'https://cdn.skypack.dev/three@0.129.0/build/three.module.js';
+        import { OrbitControls } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js';
+        import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- 1. تشغيل الهيدر وقوائم الموبايل ---
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // 🌟 2. كود جافا سكريبت مخصص لتنعيم حركة الـ Scroll عند الضغط على أي لينك بالصفحة
+            const scrollLinks = document.querySelectorAll('.scroll-link');
+            scrollLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    
+                    // إذا كان الرابط داخلي (يبدأ بعلامة #)
+                    if (targetId.startsWith('#')) {
+                        e.preventDefault();
+                        const targetSection = document.querySelector(targetId);
+                        
+                        if (targetSection) {
+                            // إغلاق قائمة الموبايل تلقائياً لو كانت مفتوحة
+                            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                                mobileMenu.classList.add('hidden');
+                            }
+                            
+                            // حساب التمرير بدقة مع مراعاة ارتفاع الهيدر الثابت
+                            const headerOffset = 90;
+                            const elementPosition = targetSection.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // --- 3. فحص فورم التواصل والتحويل لصفحة 404 المخصصة عند الفراغ ---
+            const submitBtn = document.getElementById('submit-contact-btn');
+            const nameInput = document.getElementById('contact-name');
+            const emailInput = document.getElementById('contact-email');
+            const requestInput = document.getElementById('contact-request');
+            const successToast = document.getElementById('toast-success');
+
+            submitBtn.addEventListener('click', () => {
+                if (!nameInput.value.trim() || !emailInput.value.trim() || !requestInput.value.trim()) {
+                    window.location.href = 'pages/erorr_404.html';
+                } else {
+                    successToast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+                    successToast.classList.add('translate-y-0', 'opacity-100');
+                    nameInput.value = ''; emailInput.value = ''; requestInput.value = '';
+                    setTimeout(() => { successToast.classList.add('translate-y-24', 'opacity-0'); }, 4000);
+                }
+            });
+
+            // --- 4. بناء محرك Three.js المفتوح والواسع بدون أي قطع في الأطراف بالمليمتر ---
+            const container3D = document.getElementById("container3D");
+            if (container3D) {
+                const width = container3D.clientWidth;
+                const height = container3D.clientHeight;
+
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+                camera.position.set(0, 0, 5); 
+
+                let object = null;
+                let controls;
+
+                const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+                renderer.setSize(width, height);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                container3D.appendChild(renderer.domElement);
+
+                const ambientLight = new THREE.AmbientLight(0xffffff, 5);
+                scene.add(ambientLight);
+
+                const topLight = new THREE.DirectionalLight(0xffffff, 7);
+                topLight.position.set(10, 15, 10);
+                scene.add(topLight);
+
+                const blueBacklight = new THREE.PointLight(0xffffff, 15, 30);
+                blueBacklight.position.set(0, 0, -3);
+                scene.add(blueBacklight);
+
+                const loader = new GLTFLoader();
+                loader.load(
+                    'assets/564.gltf', 
+                    function (gltf) {
+                        object = gltf.scene;
+
+                        const box = new THREE.Box3().setFromObject(object);
+                        const center = box.getCenter(new THREE.Vector3());
+                        const size = box.getSize(new THREE.Vector3());
+
+                        object.position.x = -center.x;
+                        object.position.y = -center.y;
+                        object.position.z = -center.z;
+
+                        const maxDim = Math.max(size.x, size.y, size.z);
+                        if (maxDim > 0) {
+                            const targetSize = 4.2; 
+                            const scaleFactor = targetSize / maxDim;
+                            
+                            const wrapperGroup = new THREE.Group();
+                            wrapperGroup.add(object);
+                            wrapperGroup.scale.set(scaleFactor, scaleFactor, scaleFactor);
+                            scene.add(wrapperGroup);
+                            object = wrapperGroup;
+                        } else {
+                            scene.add(object);
+                        }
+
+                        object.traverse((child) => {
+                            if (child.isMesh) {
+                                child.material = new THREE.MeshStandardMaterial({
+                                    color: 0x1d75f2,
+                                    metalness: 0.96,
+                                    roughness: 0.14,
+                                    side: THREE.DoubleSide
+                                });
+                            }
+                        });
+                    }
+                );
+
+                controls = new OrbitControls(camera, renderer.domElement);
+                controls.enableDamping = true;
+                controls.dampingFactor = 0.05;
+                controls.enableZoom = false;
+
+                let mouseX = 0;
+                let mouseY = 0;
+                let targetRotationX = 0;
+                let targetRotationY = 0;
+
+                window.addEventListener('mousemove', (e) => {
+                    mouseX = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
+                    mouseY = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
+                    
+                    targetRotationY = mouseX * 0.45;
+                    targetRotationX = mouseY * 0.35;
+                });
+
+                const clock = new THREE.Clock();
+                function animate() {
+                    requestAnimationFrame(animate);
+                    const elapsedTime = clock.getElapsedTime();
+
+                    if (object) {
+                        object.position.y = Math.sin(elapsedTime * 1.4) * 0.14;
+                        const autoSpin = elapsedTime * 0.08;
+                        object.rotation.y += (targetRotationY + autoSpin - object.rotation.y) * 0.08;
+                        object.rotation.x += (targetRotationX - object.rotation.x) * 0.08;
+                    }
+
+                    controls.update();
+                    renderer.render(scene, camera);
+                }
+                animate();
+
+                window.addEventListener("resize", function () {
+                    const w = container3D.clientWidth;
+                    const h = container3D.clientHeight;
+                    camera.aspect = w / h;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(w, h);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
